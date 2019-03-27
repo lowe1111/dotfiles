@@ -8,14 +8,17 @@ then
   source ~/.localrc
 fi
 
-source $ZSHDOT/system/index.zsh
+SYSTEM_INDEX=$ZSHDOT/system/index.zsh
+source $SYSTEM_INDEX
 
 typeset -U config_files
 config_files=($ZSHDOT/*/index.zsh)
 
 for file in $config_files
 do
-  source $file
+  if [ $file != $SYSTEM_INDEX ]; then
+    source $file
+  fi
 done
 
 # initialize autocomplete here, otherwise functions won't be loaded
@@ -27,6 +30,15 @@ unset config_files
 ######### nvm
 # TODO rafael: try to move from here
 source "/usr/local/opt/nvm/nvm.sh"
+
+######### virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+
+######### virtualenv
+alias vpython='[ -d "../vpython-$(basename $(pwd))" ] || virtualenv ../vpython-$(basename $(pwd)); source ../vpython-$(basename $(pwd))/bin/activate'
+alias vpython3='[ -d "../vpython-$(basename $(pwd))" ] || virtualenv -p python3.7 ../vpython-$(basename $(pwd)); source ../vpython-$(basename $(pwd))/bin/activate'
 
 ######### pyenv
 eval "$(pyenv init -)"
@@ -56,6 +68,28 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 
 PATH="~/bin:$PATH"
 
+######### slack
 alias slack1="curl -X PUT http://raspberrypi.local:9000/api/v1/inputs/1"
 alias slack2="curl -X PUT http://raspberrypi.local:9000/api/v1/inputs/2"
 alias slack3="curl -X PUT http://raspberrypi.local:9000/api/v1/inputs/3"
+
+######### thumbor
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# watcher / watch654 / ChangeMe
+alias ssh-thumbor-be-prod='i2cssh -b -l watcher cmah19mp01lb08.globoi.com cmah19mp01lb09.globoi.com cmal19mp01lb08.globoi.com cmal19mp01lb09.globoi.com'
+alias ssh-thumbor-fe-prod='i2cssh -b -l rafael.eyng cmah25mp39lf02.globoi.com cmal25mp39lf02.globoi.com cmaq25mp39lf02.globoi.com'
+alias ssh-thumbor-worker-prod='i2cssh -b -l rafael.eyng cmah19mp01lb10.globoi.com cmal19mp01lb10.globoi.com'
+alias ssh-thumbor-be-qa='i2cssh -b -l rafael.eyng thumbor-be-qa-1.cmah08be-1109.cp.globoi.com thumbor-be-qa-2.cmal08be-1111.cp.globoi.com'
+alias ssh-thumbor-fe-qa='i2cssh -b -l rafael.eyng thumbor-fe-qa-1.cmah08fe-1393.cp.globoi.com thumbor-fe-qa-2.cmal08fe-1414.cp.globoi.com'
+alias ssh-thumbor-worker-qa='i2cssh -b -l rafael.eyng thumbor-worker-qa-1.cmah08be-1109.cp.globoi.com thumbor-worker-qa-2.cmal08be-1111.cp.globoi.com'
+alias ssh-thumbor-be-dev='i2cssh -b -l rafael.eyng -m thumbor-be-dev-2.cmal08be-1102.cp.globoi.com'
+alias ssh-thumbor-fe-dev='i2cssh -b -l rafael.eyng -m thumbor-fe-dev-2.cmal08fe-1412.cp.globoi.com'
+alias ssh-thumbor-worker-dev='i2cssh -b -l rafael.eyng thumbor-worker-dev-2.cmal08be-1102.cp.globoi.com'
+alias ssh-thumbor-be-staging='i2cssh -b -l rafael.eyng thumbor-staging-be-1.cmaq19be-19.cp.globoi.com thumbor-staging-be-2.cmaq21be-17.cp.globoi.com'
+alias ssh-thumbor-fe-staging='i2cssh -b -l rafael.eyng thumbor-staging-fe-1.cmaq19fe-137.cp.globoi.com'
+alias ssh-thumbor-worker-staging='i2cssh -b -l rafael.eyng thumbor-staging-worker-1.cmaq19be-19.cp.globoi.com thumbor-staging-worker-2.cmaq21be-17.cp.globoi.com'
+
+# ######### dbaas
+# export "CFLAGS=-I/usr/local/include -L/usr/local/lib"
