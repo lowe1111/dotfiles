@@ -37,7 +37,7 @@ export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
 
 ######### virtualenv
-alias vpython='[ -d "../vpython-$(basename $(pwd))" ] || virtualenv ../vpython-$(basename $(pwd)); source ../vpython-$(basename $(pwd))/bin/activate'
+alias vpython='[ -d "../vpython-$(basename $(pwd))" ] || virtualenv -p python2.7 ../vpython-$(basename $(pwd)); source ../vpython-$(basename $(pwd))/bin/activate'
 alias vpython3='[ -d "../vpython-$(basename $(pwd))" ] || virtualenv -p python3.7 ../vpython-$(basename $(pwd)); source ../vpython-$(basename $(pwd))/bin/activate'
 
 ######### pyenv
@@ -91,5 +91,9 @@ alias ssh-thumbor-be-staging='i2cssh -b -l rafael.eyng thumbor-staging-be-1.cmaq
 alias ssh-thumbor-fe-staging='i2cssh -b -l rafael.eyng thumbor-staging-fe-1.cmaq19fe-137.cp.globoi.com'
 alias ssh-thumbor-worker-staging='i2cssh -b -l rafael.eyng thumbor-staging-worker-1.cmaq19be-19.cp.globoi.com thumbor-staging-worker-2.cmaq21be-17.cp.globoi.com'
 
-# ######### dbaas
-# export "CFLAGS=-I/usr/local/include -L/usr/local/lib"
+### https://github.com/deweller/switchaudio-osx
+alias s='SwitchAudioSource'
+alias sn='s -n'
+alias s1='s -s "Built-in Output" && s -t input -s "Built-in Microphone"'
+alias s2='s -s "Microsoft LifeChat LX-3000" && s -t input -s "Microsoft LifeChat LX-3000"'
+alias s3='s -s "HDMI" && (s -t input -s "HD Pro Webcam C920" || s -t input -s "Built-in Microphone")'
