@@ -94,6 +94,6 @@ alias ssh-thumbor-worker-staging='i2cssh -b -l rafael.eyng thumbor-staging-worke
 ### https://github.com/deweller/switchaudio-osx
 alias s='SwitchAudioSource'
 alias sn='s -n'
-alias s1='s -s "Built-in Output" && s -t input -s "Built-in Microphone"'
-alias s2='s -s "Microsoft LifeChat LX-3000" && s -t input -s "Microsoft LifeChat LX-3000"'
-alias s3='s -s "HDMI" && (s -t input -s "HD Pro Webcam C920" || s -t input -s "Built-in Microphone")'
+alias s1='(s -t output -s "Built-in Output") && (s -t system -s "Built-in Output") && (s -t input -s "Built-in Microphone")'
+alias s2='(s -t output -s "Microsoft LifeChat LX-3000") && (s -t system -s "Microsoft LifeChat LX-3000") && (s -t input -s "Microsoft LifeChat LX-3000")'
+alias s3='(s -t output -s "HDMI" || s -t output -s "Built-in Output") && (s -t system -s "HDMI" || s -t system -s "Built-in Output") && (s -t input -s "HD Pro Webcam C920" || s -t input -s "Built-in Microphone")'
