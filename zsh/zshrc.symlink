@@ -99,8 +99,13 @@ alias ssh-thumbor-fe-staging='i2cssh -b -l rafael.eyng thumbor-staging-fe-1.cmaq
 alias ssh-thumbor-worker-staging='i2cssh -b -l rafael.eyng thumbor-staging-worker-1.cmaq19be-19.cp.globoi.com thumbor-staging-worker-2.cmaq21be-17.cp.globoi.com'
 
 ### https://github.com/deweller/switchaudio-osx
+S_OUT_1="s -t output -s 'Built-in Output'"
+S_OUT_2="s -t output -s 'HDMI'"
+S_SYS_1="s -t system -s 'Built-in Output'"
+S_SYS_2="s -t system -s 'HDMI'"
+S_IN_1="s -t input -s 'ARCANO AM-BLACK-1 '" # yes, with a trailing space ¯\_(ツ)_/¯
+S_IN_2="s -t input -s 'Built-in Microphone'"
 alias s='SwitchAudioSource'
 alias sn='s -n'
-alias s1='(s -t output -s "Built-in Output") && (s -t system -s "Built-in Output") && (s -t input -s "Built-in Microphone")'
-alias s2='(s -t output -s "Microsoft LifeChat LX-3000") && (s -t system -s "Microsoft LifeChat LX-3000") && (s -t input -s "Microsoft LifeChat LX-3000")'
-alias s3='(s -t output -s "HDMI" || s -t output -s "Built-in Output") && (s -t system -s "HDMI" || s -t system -s "Built-in Output") && (s -t input -s "HD Pro Webcam C920" || s -t input -s "Built-in Microphone")'
+alias s1="($S_OUT_1) && ($S_SYS_1) && ($S_IN_1 || $S_IN_2)"
+alias s2="($S_OUT_2) && ($S_SYS_2) && ($S_IN_1 || $S_IN_2)"
