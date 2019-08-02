@@ -6,10 +6,10 @@ export PATH="./bin:/usr/local/bin:/usr/local/sbin:$ZSHDOT/bin:$PATH"
 ######################################
 # env
 ######################################
-export EDITOR='atom'
+export EDITOR='sublime'
 
 # your code folder that we can `c [tab]` to
-export PROJECTS=~/code
+export PROJECTS=~/projects
 
 ######################################
 # keys
