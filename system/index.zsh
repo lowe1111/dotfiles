@@ -11,6 +11,9 @@ export EDITOR='sublime'
 # your code folder that we can `c [tab]` to
 export PROJECTS=~/projects
 
+export PATH="/usr/local/opt/php@7.0/bin:$PATH"
+export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
+
 ######################################
 # keys
 ######################################
