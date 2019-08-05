@@ -6,6 +6,7 @@ export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
 
 # project aliases
 alias gotocompose="cd ~/projects/docker-compose"
+
 alias gotoxfrontend="cd /Users/lorenzweiss/projects/loopline-x/frontend"alias gotoxfrontend="cd /Users/lorenzweiss/projects/loopline-x/frontend"
 alias gotoxbackend="cd /Users/lorenzweiss/projects/loopline-x/backend"
 
