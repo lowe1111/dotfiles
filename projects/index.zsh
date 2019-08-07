@@ -6,7 +6,7 @@ export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
 
 # project aliases
 alias gotocompose="cd ~/projects/docker-compose"
-
+alias la5="php artisan"
 alias gotoxfrontend="cd /Users/lorenzweiss/projects/loopline-x/frontend"alias gotoxfrontend="cd /Users/lorenzweiss/projects/loopline-x/frontend"
 alias gotoxbackend="cd /Users/lorenzweiss/projects/loopline-x/backend"
 
@@ -17,5 +17,5 @@ alias queuex="la5 queue:listen --queue=registration,invitation,password_reminder
 alias npminstalling="npm install --no-progress"
 
 alias ln_s="gotocompose && ./run.sh services"
-alias ln_3="gotocompose && ./run.sh services"
+alias ln_3="gotocompose && ./run.sh 3rd-party"
 alias ln_be="la5 serve --host=0"
