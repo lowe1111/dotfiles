@@ -10,7 +10,7 @@
   branch = auto
   ui = true
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/lorenzweiss/.gitignore
   editor = vim
 [apply]
   whitespace = nowarn
@@ -28,9 +28,9 @@
   default = simple
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [filter "lfs"]
   smudge = git-lfs smudge %f

@@ -1,8 +1,8 @@
 ######################################
 # config
 ######################################
-export LSCOLORS="exfxcxdxbxegedabagacad"
-export CLICOLOR=true
+#export LSCOLORS="exfxcxdxbxegedabagacad"
+#export CLICOLOR=true
 
 fpath=($ZSHDOT/functions $fpath)
 

@@ -1,12 +1,15 @@
 TIME_START=$(($(gdate +%s%N) / 1000000))
 
+
 local function compute_load_time () {
   local TIME_START=$1
   local TIME_END=$(($(gdate +%s%N) / 1000000))
   echo $((TIME_END-TIME_START))
 }
 
-export ZSHDOT=$HOME/.dotfiles
+export ZSHDOT=$HOME/dotfiles
+
+ZSH_THEME="agnoster"
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
@@ -77,10 +80,14 @@ alias s1="($S_OUT_1) && ($S_SYS_1) && ($S_IN_1 || $S_IN_2)"
 alias s2="($S_OUT_2) && ($S_SYS_2) && ($S_IN_1 || $S_IN_2)"
 alias s3="($S_OUT_3) && ($S_SYS_3) && ($S_IN_1 || $S_IN_2)"
 
-alias a='asdf'
-. /usr/local/opt/asdf/asdf.sh
 # TODO make completions work
 # . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
 # enable to print the load time
 #compute_load_time $TIME_START
+export PATH="/usr/local/opt/php@7.0/bin:$PATH"
+export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
