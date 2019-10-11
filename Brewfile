@@ -23,6 +23,7 @@ brew 'wget'
 brew 'zsh-syntax-highlighting'
 brew 'nvm'
 brew 'yarn'
+brew 'go'
 
 cask 'authy'
 cask 'sublime-text'

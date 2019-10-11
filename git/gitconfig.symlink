@@ -36,3 +36,8 @@
   smudge = git-lfs smudge %f
   required = true
   clean = git-lfs clean %f
+[user]
+	name = lowe1111
+	email = lorenz.weiss@loopline-systems.com
+[commit]
+	template = /Users/lorenzweiss/.stCommitMsg
