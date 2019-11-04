@@ -5,5 +5,5 @@
 # `update` handles installation, updates, things like that. Run it periodically
 # to make sure you're on the latest and greatest.
 
-export ZSHDOT=$HOME/dotfiles
+export ZSHDOT=~/projects/personal/dotfiles
 $ZSHDOT/scripts/update

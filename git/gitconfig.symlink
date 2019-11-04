@@ -10,7 +10,7 @@
   branch = auto
   ui = true
 [core]
-	excludesfile = /Users/lorenzweiss/.gitignore
+	excludesfile = /Users/lorenz.weiss/.gitignore_global
   editor = vim
 [apply]
   whitespace = nowarn

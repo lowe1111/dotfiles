@@ -11,7 +11,7 @@ alias gotoxfrontend="cd /Users/lorenzweiss/projects/lls/loopline-x/frontend"
 alias gotoxbackend="cd /Users/lorenzweiss/projects/lls/loopline-x/backend"
 alias gotocompose="cd /Users/lorenzweiss/projects/lls/docker-compose"
 
-alias gotodotfiles="cd /Users/lorenzweiss/projects/dotfiles"
+alias gotodotfiles="cd /Users/lorenzweiss/projects/personal/dotfiles"
 
 alias queuex="la5 queue:listen --queue=registration,invitation,password_reminder,emails --tries=3 --timeout=300"
 alias npminstalling="npm install --no-progress"
