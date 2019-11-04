@@ -1,14 +1,12 @@
 # dotfiles
 
-This is a clone from @holman [dotfiles](https://github.com/holman/dotfiles) + **oh-my-zsh** config + customizations.
+This is a clone from @holman [dotfiles](https://github.com/rafaeleyng/dotfiles.git)
 
 I renamed in this project every occurrence of the variable `ZSH` to `ZSHDOT`, as pointed [here](https://github.com/holman/dotfiles/issues/70), to avoid conflicts between dotfiles and oh-my-zsh.
 
 ## install
 
 ```sh
-git clone https://github.com/rafaeleyng/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
 scripts/bootstrap
 ```
 
